@@ -7,7 +7,7 @@ configuration-cybercity  Desktop  dotfiles  Downloads  gotop  Images  maim  puls
 my-arch% cd dotfiles 
 my-arch% git pull origin master
 From https://github.com/patrickwoolf/dotfiles
- * branch            master     -> FETCH_HEAD
+  branch            master     -> FETCH_HEAD
 Already up to date.
 my-arch% git checkout -b 08312356
 Switched to a new branch '08312356'
@@ -24,11 +24,11 @@ remote: Create a pull request for '08312356' on GitHub by visiting:
 remote:      https://github.com/patrickwoolf/dotfiles/pull/new/08312356
 remote: 
 To https://github.com/patrickwoolf/dotfiles
- * [new branch]      08312356 -> 08312356
+  [new branch]      08312356 -> 08312356
 my-arch% git checkout master
 Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
 my-arch% git pull origin master
 From https://github.com/patrickwoolf/dotfiles
- * branch            master     -> FETCH_HEAD
+  branch            master     -> FETCH_HEAD
 Already up to date.
