@@ -24,10 +24,10 @@ exec --no-startup-id /usr/bin/compton --config $HOME/.compton.conf -b -c --respe
 #exec --no-startup-id polybar mybar -r
 exec --no-startup-id setxkbmap -layout us,ru
 exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
+exec ibus-daemon -drx
 
 # Menu
-bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns
-# -theme base16-ocean 
+bindsym $mod+d exec rofi -theme ishaan26 -lines 10 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -56,7 +56,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+q kill
 
 # screenshot
-bindsym $mod+p exec scrot -quality 100 ~/Images/$(date +%s).png
+bindsym $mod+p exec scrot --quality 100 $(date +%s).png -e 'mv $f ~/Images/'
 
 # bindsym
 bindsym Mod1+Tab exec ~/.i3/tab_windows.sh
@@ -182,9 +182,10 @@ mode "resize" {
 
 bindsym $mod+z mode "resize"
 
+# execute polybar, size, and wallpaper.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always xrandr -s 1680x1050
-exec_always feh --bg-center $HOME/Downloads/pang.jpeg
+exec_always feh --bg-fill $HOME/Downloads/4k-wallpaper-adventure-daylight-1525041.jpg
 
 # #2f343f
 
