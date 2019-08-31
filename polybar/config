@@ -102,7 +102,7 @@ font-1 = FontAwesome5Free:style=Solid:size=10;0.5
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
 modules-left = i3
-modules-center = firefox
+modules-center = 
 modules-right = wireless-network sep memory sep cpu sep battery sep date
 
 ; The separator will be inserted between the output of each module
@@ -187,11 +187,7 @@ enable-ipc = false
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
 
-[module/firefox]
-label = "Firefox"
-exec firefox &
 
-[module/battery]
 [module/battery]
 type = internal/battery
 
