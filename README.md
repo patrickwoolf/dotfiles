@@ -2,7 +2,7 @@
 Arch Linux running with i3-gaps.
 
 # Git
-my-arch% ls<br>
+<code>my-arch% ls<br>
 configuration-cybercity  Desktop  dotfiles  Downloads  gotop  Images  maim  pulseaudio	siji  slop  snap  snapd  spotifyd<br>
 my-arch% cd dotfiles <br>
 my-arch% git pull origin master<br>
@@ -32,3 +32,4 @@ my-arch% git pull origin master<br>
 From https://github.com/patrickwoolf/dotfiles<br>
   branch            master     -> FETCH_HEAD<br>
 Already up to date.<br>
+</code>
