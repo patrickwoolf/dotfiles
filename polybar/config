@@ -96,14 +96,16 @@ module-margin = 1
 ; See the Fonts wiki page for more details
 font-0 = Inconsolata:bold:size=10;1.5
 font-1 = FontAwesome5Free:style=Solid:size=10;0.5
+font-2 = FontAwesome5Free:style=Regular:size=10;0.5
+font-3 = FontAwesome5Brands:style=Regular:size=10;0.5
 
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left = i3
-modules-center = 
-modules-right = wireless-network sep memory sep cpu sep battery sep date
+modules-left = i3 poweroff sep firefox sep spotify
+modules-center = date
+modules-right = wireless-network sep memory sep cpu sep battery 
 
 ; The separator will be inserted between the output of each module
 separator =
@@ -186,6 +188,101 @@ enable-ipc = false
 
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
+
+[module/spotify]
+type = custom/script
+interval = 0.5
+exec = echo ""
+;exec-foreground = #7BA23F
+format-prefix = 
+format-prefix-foreground = #7BA23F
+click-left = spotify
+
+[module/firefox]
+type = custom/script
+interval = 0.5
+exec = echo ""
+;exec-foreground = #CB4042
+format-prefix = 
+format-prefix-foreground = #CB4042
+click-left = firefox
+
+[module/alsa]
+type = internal/alsa
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = #ffffff
+format-muted-prefix = " "
+format-muted-foreground = #ffffff
+label-muted = sound muted
+bar-volume-width = 10
+bar-volume-foreground-0 = #fff
+bar-volume-foreground-1 = #fff
+bar-volume-foreground-2 = #fff
+bar-volume-foreground-3 = #fff
+bar-volume-foreground-4 = #fff
+bar-volume-foreground-5 = #fff
+bar-volume-foreground-6 = #fff
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #fff
+
+[module/poweroff]
+type = custom/script
+exec = echo ""
+format-prefix = ""
+format-prefix-foreground = #ffffff
+click-left = systemctl poweroff
+
+
+[module/menu-apps]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+
+menu-0-0 = Browsers
+menu-0-0-exec = menu-open-1
+menu-0-1 = Multimedia
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Chromium
+menu-1-1-exec = chromium &
+
+menu-2-0 = Gimp
+menu-2-0-exec = gimp &
+menu-2-1 = Scrot
+menu-2-1-exec = scrot &
+
+; Available tags:
+;   <label-toggle> (default) - gets replaced with <label-(open|close)>
+;   <menu> (default)
+; Note that if you use <label-toggle> you must also include
+; the definition for <label-open>
+;format = <label-toggle> <menu>
+
+label-open = Apps
+label-close = x
+
+; Optional item separator
+; Default: none
+label-separator = |
 
 
 [module/battery]

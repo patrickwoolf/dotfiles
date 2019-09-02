@@ -27,7 +27,7 @@ exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
 exec ibus-daemon -drx
 
 # Menu
-bindsym $mod+d exec rofi -theme ishaan26 -lines 10 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns
+bindsym $mod+d exec rofi -theme Monokai -lines 10 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns
 
 
 # Font for window titles. Will also be used by the bar unless a different font
