@@ -98,12 +98,14 @@ font-0 = Inconsolata:bold:size=10;1.5
 font-1 = FontAwesome5Free:style=Solid:size=10;0.5
 font-2 = FontAwesome5Free:style=Regular:size=10;0.5
 font-3 = FontAwesome5Brands:style=Regular:size=10;0.5
+font-4 = FontAwesome5Brands:style=Duotone:size=10;0.5
+font-5 = FontAwesome5Free:style=Duotone:size=10;0.5
 
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left = i3 poweroff sep firefox sep spotify
+modules-left = i3 poweroff sep sleep sep firefox sep epiphany sep file sep spotify
 modules-center = date
 modules-right = wireless-network sep memory sep cpu sep battery 
 
@@ -193,19 +195,30 @@ enable-ipc = false
 type = custom/script
 interval = 0.5
 exec = echo ""
-;exec-foreground = #7BA23F
-format-prefix = 
-format-prefix-foreground = #7BA23F
+format = ""
+format-foreground = #7BA23F
 click-left = spotify
 
 [module/firefox]
 type = custom/script
-interval = 0.5
 exec = echo ""
-;exec-foreground = #CB4042
-format-prefix = 
-format-prefix-foreground = #CB4042
+format = ""
+format-foreground = #CB4042
 click-left = firefox
+
+[module/epiphany]
+type = custom/script
+exec = echo ""
+format = ""
+format-foreground = #CD5842
+click-left = epiphany
+
+[module/file]
+type = custom/script
+exec = echo ""
+format = ""
+format-foreground =  #D79485 
+click-left = thunar
 
 [module/alsa]
 type = internal/alsa
@@ -235,10 +248,17 @@ bar-volume-empty-foreground = #fff
 [module/poweroff]
 type = custom/script
 exec = echo ""
-format-prefix = ""
-format-prefix-foreground = #ffffff
+format = ""
+format-foreground = #ffffff
 click-left = systemctl poweroff
 
+[module/sleep]
+type = custom/script
+exec = echo ""
+format = ""
+format-foreground = #FAD689
+click-right = sflock
+click-left = xscreensaver-command -lock
 
 [module/menu-apps]
 type = custom/menu
@@ -489,7 +509,7 @@ interval = 0.5
 
 label =  %percentage%%
 
-label-foreground = #0066CC
+label-foreground = #33A6B8
 label-padding-right = 1
 
 [module/memory]
@@ -520,7 +540,7 @@ format = <label>
 
 label =  %gb_used%
 
-label-foreground = #8C54FE
+label-foreground = #B481BB
 
 [module/temperature]
 type = internal/temperature
