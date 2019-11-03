@@ -2,6 +2,8 @@
 Arch Linux running with i3-gaps.
 
 # Git
+<img src="Screenshot_20191101-160529059.jpg">
+
 <code>my-arch% ls</code><br>
 <code>  configuration-cybercity  Desktop  dotfiles  Downloads  gotop  Images  maim  pulseaudio	siji  slop  snap  snapd  spotifyd</code><br>
 <code>my-arch% cd dotfiles</code><br>
